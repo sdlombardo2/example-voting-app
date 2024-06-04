@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, make_response, g
 from redis import Redis
+from elasticapm.contrib.flask import ElasticAPM
 import os
 import socket
 import random
@@ -11,6 +12,14 @@ option_b = os.getenv('OPTION_B', "Dogs")
 hostname = socket.gethostname()
 
 app = Flask(__name__)
+
+app.config['ELASTIC_APM'] = {
+    'SERVICE_NAME': 'vote',
+    'SECRET_TOKEN': 'lbWyv96J0Y5RIgtAHf',
+    'SERVER_URL': 'https://871aa593ccab4b0fa400cb3e7629842b.apm.us-central1.gcp.cloud.es.io:443',
+    'ENVIRONMENT': 'demo',
+}
+apm = ElasticAPM(app)
 
 gunicorn_error_logger = logging.getLogger('gunicorn.error')
 app.logger.handlers.extend(gunicorn_error_logger.handlers)
