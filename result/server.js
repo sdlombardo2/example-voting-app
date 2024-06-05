@@ -1,10 +1,3 @@
-import { init as initApm } from '@elastic/apm-rum'
-var apm = initApm({
-  serviceName: 'result',
-  serverUrl: 'https://871aa593ccab4b0fa400cb3e7629842b.apm.us-central1.gcp.cloud.es.io:443',
-  serviceVersion: '',
-  environment: 'demo'
-})
 var express = require('express'),
     async = require('async'),
     { Pool } = require('pg'),
