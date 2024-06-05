@@ -7,11 +7,17 @@ using System.Threading;
 using Newtonsoft.Json;
 using Npgsql;
 using StackExchange.Redis;
+using AllElasticApm;
 
 namespace Worker
 {
     public class Program
     {
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            app.UseAllElasticApm(Configuration);
+        }
+        
         public static int Main(string[] args)
         {
             try
