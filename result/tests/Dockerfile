@@ -1,6 +1,6 @@
 FROM node:8.9-slim
 
-RUN apt-get update -qq && apt-get install -qy \ 
+RUN apt-get update && apt-get install -y \ 
     ca-certificates \
     bzip2 \
     curl \
