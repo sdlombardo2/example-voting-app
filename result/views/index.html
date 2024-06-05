@@ -8,13 +8,13 @@
     <meta name="keywords" content="docker-compose, docker, stack">
     <meta name="author" content="Docker">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://your-cdn-host.com/path/to/elastic-apm-rum.umd.min.js" crossorigin></script>
+    <script src="http://34.173.248.159/rum/elastic-apm-rum.umd.min.js" crossorigin></script>
     <script>
       elasticApm.init({
-        serviceName: 'my-service-name',
+        serviceName: 'result',
         serverUrl: 'https://871aa593ccab4b0fa400cb3e7629842b.apm.us-central1.gcp.cloud.es.io:443',
       })
-</script>
+    </script>
   </head>
   <body ng-controller="statsCtrl" >
      <div id="background-stats">
