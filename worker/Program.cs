@@ -9,7 +9,7 @@ using Npgsql;
 using StackExchange.Redis;
 using Elastic.Apm.NetCoreAll;
 
-namespace MyApplication
+namespace Worker
 {
     public class Program
     {
@@ -20,13 +20,7 @@ namespace MyApplication
  
         public static void Main(string[] args) 
             => CreateHostBuilder(args).Build().Run();
-    }
-}
-
-namespace Worker
-{
-    public class Program
-    {
+        
         public static int Main(string[] args)
         {
             try
