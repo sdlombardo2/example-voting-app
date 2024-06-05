@@ -17,11 +17,9 @@ namespace Worker
             => Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); })
                 .UseAllElasticApm();
- 
-        public static void Main(string[] args) 
-            => CreateHostBuilder(args).Build().Run();
         
         public static int Main(string[] args)
+            => CreateHostBuilder(args).Build().Run();
         {
             try
             {
